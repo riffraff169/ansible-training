@@ -1,0 +1,10 @@
+---
+- hosts: all
+  tasks:
+    - name: Set motd
+      copy:
+        src: motd
+        dest: /etc/motd
+        owner: root
+        group: root
+        mode: 0644

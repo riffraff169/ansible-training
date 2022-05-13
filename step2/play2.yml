@@ -1,0 +1,35 @@
+---
+- hosts: all
+  tasks:
+    - name: Set motd
+      copy:
+        src: motd
+        dest: /etc/motd
+        owner: root
+        group: root
+        mode: 0644
+
+    - name: Add user fred
+      user:
+        name: fred
+        comment: fred
+        uid: 1020
+        password: "$6$alslkhsad$aaksdfaskfdhkashdf"
+
+    - name: Update system
+      yum:
+        name: '*'
+        state: latest
+
+    - name: Install rsyslog
+      yum:
+        name: rsyslog
+        state: latest
+
+    - name: Copy rsyslog config
+      copy:
+        src: config1.conf
+        dest: /etc/rsyslog.d/
+        owner: root
+        group: root
+        mode: 0644
