@@ -7,8 +7,11 @@ Then run `start-docker.sh`. This starts the three containers that will be used, 
 This is a graduated list of steps from shell scripts up to an ansible project with roles and data separated from code.
 
 ```step1``` is just an example shell script that would be run on each node manually.
+
 ```step2``` is a simple ansible play with a couple steps from the shell script.
+
 ```step3``` is an example with inventory broken out a little more, and some variables.
+
 ```step4``` will be splitting the variables out into `group_vars` and `host_vars`.
 
 The playbooks will be run with the following command:
