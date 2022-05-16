@@ -14,5 +14,3 @@ c3 ansible_connection=docker
 [group3]
 c3 ansible_connection=docker
 
-[centos:vars]
-fred_pw=Test123
