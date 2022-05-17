@@ -1,7 +1,7 @@
 ---
 motd_string: "Test"
 fred_pw: "Test123"
-users:
+myusers_users:
   - name: fred
     comment: Fred
     uid: 1020

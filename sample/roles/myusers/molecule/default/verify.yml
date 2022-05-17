@@ -5,7 +5,7 @@
   hosts: all
   gather_facts: false
   tasks:
-  - name: Get user db
-    getent:
-      database: passwd
-      key: fred
+    - name: Verify user fred
+      getent:
+        database: passwd
+        key: fred

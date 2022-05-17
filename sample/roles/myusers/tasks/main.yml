@@ -1,6 +1,6 @@
 ---
 # tasks file for myusers
-- name: "Add user {{ item.name }}"
+- name: Add user
   user:
     name: "{{ item.name }}"
     comment: "{{ item.comment }}"

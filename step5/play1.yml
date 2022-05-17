@@ -1,41 +1,9 @@
 ---
 - hosts: all
-  tasks:
-    - name: Set motd
-      copy:
-        src: motd
-        dest: /etc/motd
-        owner: root
-        group: root
-        mode: 0644
+  roles:
+    - role: motd
 
-    # Create users, default group same as user
-    - name: Add user fred
-      user:
-        name: "{{ item.name }}"
-        comment: "{{ item.comment }}"
-        uid: "{{ item.uid | default(omit) }}"
-        password: "{{ item.password | password_hash('sha512') }}"
-        update_password: on_create
-      with_items: "{{ users }}"
+    - role: myusers
 
-    - name: Update system
-      yum:
-        name: '*'
-        state: latest
-      tags:
-        - never
-        - updateall
+    - role: rsyslog
 
-    - name: Install rsyslog
-      yum:
-        name: rsyslog
-        state: latest
-
-    - name: Copy rsyslog config
-      copy:
-        src: config1.conf
-        dest: /etc/rsyslog.d/
-        owner: root
-        group: root
-        mode: 0644
