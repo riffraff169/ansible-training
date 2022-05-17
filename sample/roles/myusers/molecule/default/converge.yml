@@ -1,0 +1,13 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include myusers"
+      include_role:
+        name: "myusers"
+#      vars:
+#        myusers_users:
+#          - name: fred
+#            comment: Fred
+#            uid: 1020
+#            password: Test123

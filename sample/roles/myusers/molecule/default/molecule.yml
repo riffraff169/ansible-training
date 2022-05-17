@@ -1,0 +1,39 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+lint: |
+  set -e
+  yamllint .
+  ansible-lint
+#  name: yamllint
+#  options:
+#    c:
+#      ../../.yamllint
+platforms:
+  - name: instance
+    image: rockylinux:8
+    pre_build_image: true
+    groups:
+      - server
+      #image: quay.io/centos/centos:stream8
+provisioner:
+  name: ansible
+  lint:
+    name: ansible-lint
+    options:
+      x:
+        - '204'
+        - '701'
+        - 'role-name'
+  inventory:
+    group_vars:
+      all:
+        myusers_users:
+          - name: fred
+            comment: Fred
+            uid: 1020
+            password: Test123
+verifier:
+  name: ansible

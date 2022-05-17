@@ -1,0 +1,10 @@
+---
+# tasks file for myusers
+- name: "Add user {{ item.name }}"
+  user:
+    name: "{{ item.name }}"
+    comment: "{{ item.comment }}"
+    uid: "{{ item.uid | default(omit) }}"
+    password: "{{ item.password | password_hash('sha512') }}"
+    update_password: on_create
+  with_items: "{{ myusers_users }}"

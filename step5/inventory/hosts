@@ -1,0 +1,16 @@
+[centos]
+c1 ansible_connection=docker
+c2 ansible_connection=docker
+c3 ansible_connection=docker
+
+[group1]
+c1 ansible_connection=docker
+c2 ansible_connection=docker
+
+[group2]
+c2 ansible_connection=docker
+c3 ansible_connection=docker
+
+[group3]
+c3 ansible_connection=docker
+
