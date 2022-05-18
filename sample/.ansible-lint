@@ -3,3 +3,4 @@ skip_list:
   - 'role-name'
   - 'meta-incorrect'
   - 'meta-no-info'
+  - 'fqcn-builtins'
