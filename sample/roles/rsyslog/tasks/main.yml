@@ -1,0 +1,6 @@
+---
+# tasks file for rsyslog
+- name: Install rsyslog
+  yum:
+    name: rsyslog
+    state: present

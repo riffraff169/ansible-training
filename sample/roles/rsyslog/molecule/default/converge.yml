@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include riffraff.rsyslog"
+      include_role:
+        name: "riffraff.rsyslog"

@@ -1,0 +1,16 @@
+---
+# This is an example playbook to execute Ansible tests.
+
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+  - name: Example assertion
+    ansible.builtin.package_facts:
+      manager: auto
+
+  - name: Test if rsyslog installed
+    ansible.builtin.debug:
+      msg: "{{ ansible_facts.packages['rsyslog'] | length }} versions of rsyslog are installed"
+    when: "'rsyslog' in ansible_facts.packages"
+    

@@ -7,10 +7,6 @@ lint: |
   set -e
   yamllint -c .yamllint .
   ansible-lint -c .ansible-lint
-#  name: yamllint
-#  options:
-#    c:
-#      ../../.yamllint
 platforms:
   - name: instance
     image: rockylinux:8
@@ -19,20 +15,10 @@ platforms:
       - server
 provisioner:
   name: ansible
-  lint:
-    name: ansible-lint
-    options:
-      x:
-        - '204'
-        - '701'
-        - 'role-name'
   inventory:
     group_vars:
       all:
-        myusers_users:
-          - name: fred
-            comment: Fred
-            uid: 1020
-            password: Test123
+        rsyslog_packages:
+          - rsyslog
 verifier:
   name: ansible

@@ -16,11 +16,6 @@
         uid: 1020
         password: "$6$alslkhsad$aaksdfaskfdhkashdf"
 
-    - name: Update system
-      yum:
-        name: '*'
-        state: latest
-
     - name: Install rsyslog
       yum:
         name: rsyslog
