@@ -1,0 +1,11 @@
+ansible-lint
+ansible
+boto
+molecule[docker]
+setuptools
+six
+shyaml
+rpm
+yapf
+Jinja2
+jsonpath_rw
