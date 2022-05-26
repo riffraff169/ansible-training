@@ -13,7 +13,7 @@ generate-requirements: clean requirements-base.txt
 	venv/bin/python venv/bin/pip freeze >> requirements.txt
 
 venv/bin/activate: requirements.txt
-	if [ -d venv ]; then \
+	if [ ! -d venv ]; then \
 		python -m venv venv --system-site-packages; \
 	fi
 	. venv/bin/activate; pip install -U pip; pip install -r requirements.txt
