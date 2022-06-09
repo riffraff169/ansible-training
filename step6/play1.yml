@@ -1,0 +1,11 @@
+---
+- hosts: all
+  roles:
+    - role: motd
+
+    - role: myusers
+
+- hosts: group2
+  roles:
+    - role: rsyslog
+

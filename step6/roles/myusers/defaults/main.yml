@@ -1,0 +1,10 @@
+---
+# defaults file for myusers
+
+# List of users
+# myusers_users:
+#   - name: fred
+#     comment: Fred
+#     uid: 1000 # optional
+#     password: Test123
+myusers_users: []

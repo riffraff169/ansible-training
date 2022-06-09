@@ -1,0 +1,14 @@
+---
+# tasks file for rsyslog
+- name: Install rsyslog
+  yum:
+    name: rsyslog
+    state: latest
+
+- name: Copy rsyslog config
+  copy:
+    src: config1.conf
+    dest: "{{ rsyslog_conf_dir }}"
+    owner: root
+    group: root
+    mode: 0644
